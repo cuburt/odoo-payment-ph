@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import polling
 import json
 import logging
 import requests
@@ -30,7 +30,7 @@ class AcquirerPaymaya(models.Model):
 
 
     @api.model
-    def _get_headers(self, key):
+    def paymaya_get_headers(self, key):
         auth = '%s:%s%s' %(key,self.paymaya_api_username,self.paymaya_api_password) \
             if self.paymaya_api_username and self.paymaya_api_password \
             else '%s:' %(key)
@@ -206,7 +206,7 @@ class AcquirerPaymaya(models.Model):
         # self.ensure_one()
         paymaya_url = self._get_paymaya_urls(self.environment)['paymaya_form_url']
         url = urls.url_join(paymaya_url, url)
-        resp = requests.request(method, url, data=json.dumps(data), headers=self._get_headers(key))
+        resp = requests.request(method, url, data=json.dumps(data), headers=self.paymaya_get_headers(key))
         try:
             if not resp.ok and not (400 <= resp.status_code < 500 and resp.json().get('error', {}).get('code')):
                 try:

@@ -30,7 +30,7 @@ class AcquirerPaymongo(models.Model):
     paymongo_public_key = fields.Char(required_if_provider='paymongo', groups='base.group_user')
 
     @api.model
-    def _get_headers(self):
+    def paymongo_get_headers(self):
         auth = '%s:%s' % (self.paymongo_secret_key, self.paymongo_public_key)
         encodedBytes = base64.b64encode(auth.encode('UTF-8'))
         encodedString = str(encodedBytes, 'UTF-8')
@@ -98,7 +98,7 @@ class AcquirerPaymongo(models.Model):
         # self.ensure_one()
         paymongo_url = self._get_paymongo_urls(self.environment)['paymongo_form_url']
         url = urls.url_join(paymongo_url, url)
-        resp = requests.request(method, url, data=json.dumps(data), headers=self._get_headers())
+        resp = requests.request(method, url, data=json.dumps(data), headers=self.paymongo_get_headers())
         try:
             if not resp.ok or resp.status_code >= 205:
                 try:

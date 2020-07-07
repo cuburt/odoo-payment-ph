@@ -26,150 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5269888-ff37-47a4-a9f8-82ca090ead84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/4MRATCO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/controllers/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/views/sales.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/views/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4mratco_mrp/views/views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/README.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/hooks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/am.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/ar.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/bg.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/bs.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/ca.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/cs.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/da.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/de.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/el_GR.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/en_GB.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/es.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/es_CR.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/es_EC.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/es_MX.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/es_VE.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/et.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/eu.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/fi.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/fr.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/fr_CA.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/fr_CH.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/gl.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/hr.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/hr_HR.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/hu.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/it.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/ja.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/lt.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/lv.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/mk.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/mn.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/nb.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/nb_NO.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/nl.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/nl_BE.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/nl_NL.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/partner_firstname.pot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/pl.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/pt.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/pt_BR.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/pt_PT.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/ro.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/ru.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/sk.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/sl.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/sr@latin.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/sv.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/th.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/tr.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/tr_TR.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/vi.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/zh_CN.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/i18n/zh_TW.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/migrations/12.0.1.0.0/pre-ir_config_param.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/models/base_config_settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/models/res_partner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/models/res_users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/readme/CONFIGURE.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/readme/CONTRIBUTORS.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/readme/DESCRIPTION.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/readme/ROADMAP.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/readme/USAGE.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/static/description/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/static/description/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_copy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_create.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_defaults.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_delete.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_empty.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_onchange.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/tests/test_user_onchange.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/views/base_config_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/views/res_partner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partner_firstname/views/res_user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/controllers/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/demo/demo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/models/payment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/static/src/img/connect_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/views/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_7connect/views/views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/controllers/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/demo/demo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/views/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_alipay/views/views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/controllers/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/data/payment_acquirer_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/demo/demo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment_gcash/static/src/img/gcash_icon.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment_gcash/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/4mratco_mrp/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/data/payment_acquirer_data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment_7connect/data/payment_acquirer_data.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/demo/demo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/4mratco_mrp/demo/demo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment_7connect/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/views/payment_paymaya_templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment_gcash/views/payment_gcash_templates.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/views/payment_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment_gcash/views/payment_views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment_paymaya/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment_paymaya/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment_paymaya/models/payment.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment_paymaya/models/payment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment_paymongo/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment_paymongo/models/models.py" afterDir="false" />
     </list>
     <list id="e8fee304-cdb5-43be-80e0-fd973daa443d" name="paymaya" comment="" />
-    <list id="2405fd51-5526-4a28-8938-b6493113ff60" name="Revert &quot;paymaya&quot;" comment="">
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/controllers/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/models/payment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/security/ir.model.access.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/static/src/img/paymaya_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment_paymaya/tests/test_paymaya.py" beforeDir="false" />
-    </list>
+    <list id="2405fd51-5526-4a28-8938-b6493113ff60" name="Revert &quot;paymaya&quot;" comment="" />
     <list id="b0f3c38a-57b9-40fb-914e-4ddcb214c8f0" name="Revert &quot;paymaya&quot;-2" comment="Revert &quot;paymaya&quot;&#10;&#10;This reverts commit 9a797878" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +73,28 @@
       <recent name="D:\cub\devs\addons\4MRATCO\payment_7connect\data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python">
+      <module name="4MRATCO" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\MIS\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../odoo12" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../odoo12/odoo-bin" />
+      <option name="PARAMETERS" value="-c odoo-4mratco.conf -u payment_paymaya,payment_paymongo" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scaffold" type="PythonConfigurationType" factoryName="Python">
       <module name="4MRATCO" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,6 +116,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.scaffold" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -323,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594102801088</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="paymaya &amp; paymongo">
+      <created>1594103599337</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594103599337</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,17 +253,18 @@
     <MESSAGE value="paymongo gcash polling" />
     <MESSAGE value="paymaya" />
     <MESSAGE value="Revert &quot;paymaya&quot;&#10;&#10;This reverts commit 9a797878" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;paymaya&quot;&#10;&#10;This reverts commit 9a797878" />
+    <MESSAGE value="paymaya &amp; paymongo" />
+    <option name="LAST_COMMIT_MESSAGE" value="paymaya &amp; paymongo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="372" y="417" key="#Notifications" timestamp="1594100368803">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="372" y="417" key="#Notifications/0.30.1920.1050@0.30.1920.1050" timestamp="1594100368803" />
-    <state x="657" y="227" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594012899176">
+    <state x="222" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594104780743">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="657" y="227" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594012899176" />
+    <state x="222" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594104780743" />
     <state x="209" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593999878212">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -377,18 +273,18 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="235" y="424" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1590544581728" />
-    <state x="0" y="134" key="CommitChangelistDialog2" timestamp="1594102799773">
+    <state x="0" y="134" key="CommitChangelistDialog2" timestamp="1594103597249">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="0" y="134" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1594102799773" />
+    <state x="0" y="134" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1594103597249" />
     <state x="93" y="130" width="774" height="857" key="DiffContextDialog" timestamp="1594102632268">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="93" y="130" width="774" height="857" key="DiffContextDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594102632268" />
-    <state x="326" y="309" key="FileChooserDialogImpl" timestamp="1594101687923">
+    <state x="326" y="309" key="FileChooserDialogImpl" timestamp="1594103494211">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="326" y="309" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1594101687923" />
+    <state x="326" y="309" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1594103494211" />
     <state x="311" y="456" key="Github.CreateGistDialog" timestamp="1594100585016">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -397,22 +293,22 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="365" y="452" key="Github.ShareDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594100159157" />
-    <state width="468" height="272" key="GridCell.Tab.0.bottom" timestamp="1594103191587">
+    <state width="936" height="272" key="GridCell.Tab.0.bottom" timestamp="1594105474339">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="468" height="272" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1594103191587" />
-    <state width="468" height="272" key="GridCell.Tab.0.center" timestamp="1594103191587">
+    <state width="936" height="272" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1594105474339" />
+    <state width="936" height="272" key="GridCell.Tab.0.center" timestamp="1594105474339">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="468" height="272" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1594103191587" />
-    <state width="468" height="272" key="GridCell.Tab.0.left" timestamp="1594103191587">
+    <state width="936" height="272" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1594105474339" />
+    <state width="936" height="272" key="GridCell.Tab.0.left" timestamp="1594105474339">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="468" height="272" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1594103191587" />
-    <state width="468" height="272" key="GridCell.Tab.0.right" timestamp="1594103191587">
+    <state width="936" height="272" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1594105474339" />
+    <state width="936" height="272" key="GridCell.Tab.0.right" timestamp="1594105474339">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="468" height="272" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1594103191587" />
+    <state width="936" height="272" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1594105474339" />
     <state width="936" height="351" key="GridCell.Tab.1.bottom" timestamp="1593594047811">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -453,10 +349,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="334" y="469" key="VCS.ChangelistChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1594102714626" />
-    <state x="79" y="287" key="Vcs.Push.Dialog.v2" timestamp="1594102691633">
+    <state x="79" y="287" key="Vcs.Push.Dialog.v2" timestamp="1594103612656">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="79" y="287" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1594102691633" />
+    <state x="79" y="287" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1594103612656" />
     <state x="75" y="288" key="VcsDiffUtil.ChangesDialog" timestamp="1594102650733">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -493,18 +389,18 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="246" y="343" key="git4idea.merge.GitMergeDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594101039850" />
-    <state x="246" y="343" key="git4idea.merge.GitPullDialog" timestamp="1594102897728">
+    <state x="246" y="343" key="git4idea.merge.GitPullDialog" timestamp="1594103529580">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="246" y="343" key="git4idea.merge.GitPullDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594102897728" />
+    <state x="246" y="343" key="git4idea.merge.GitPullDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594103529580" />
     <state x="274" y="416" key="git4idea.rebase.GitRebaseDialog" timestamp="1594102386269">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="274" y="416" key="git4idea.rebase.GitRebaseDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594102386269" />
-    <state x="288" y="461" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1594102352539">
+    <state x="288" y="461" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1594103513855">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="288" y="461" key="git4idea.remote.GitConfigureRemotesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594102352539" />
+    <state x="288" y="461" key="git4idea.remote.GitConfigureRemotesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1594103513855" />
     <state x="255" y="449" key="git4idea.ui.GitResetDialog" timestamp="1594102937629">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
