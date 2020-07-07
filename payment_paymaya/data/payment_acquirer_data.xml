@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="payment_acquirer_paymaya" model="payment.acquirer">
+        <field name="name">Paymaya</field>
+        <field name="sequence">2</field>
+        <field name="view_template_id" ref="payment.default_acquirer_button"/>
+        <field name="image" type="base64" file="payment_paymaya/static/src/img/paymaya_icon.png"/>
+        <field name="module_id" ref="base.module_payment_paymaya"/>
+        <field name="description" type="html">
+            <p>
+                PayMaya is the easiest way to accept payments via Paymaya or credit cards.
+            </p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><i class="fa fa-check"/>Online Payment</li>
+                <li class="list-inline-item"><i class="fa fa-check"/>Payment Status Tracking</li>
+            </ul>
+        </field>
+        <!-- https://www.paypal.com/us/selfhelp/article/Which-credit-cards-can-I-accept-with-PayPal-Merchant-Services-FAQ1525#business -->
+        <field name="payment_icon_ids" eval='[(6, 0, [ref("payment.payment_icon_cc_mastercard"),
+                                                      ref("payment.payment_icon_cc_jcb"),
+                                                      ref("payment.payment_icon_cc_visa")])]'/>
+        </record>
+
+        <record id="payment_acquirer_paymaya" model="payment.acquirer">
+            <field name="name">Paymaya</field>
+            <field name="image" type="base64" file="payment_paymaya/static/src/img/paymaya_icon.png"/>
+            <field name="provider">paymaya</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="paymaya_form"/>
+            <field name="environment">test</field>
+            <field name="pre_msg"><![CDATA[
+<p>You will be redirected to the Paymaya checkout portal after clicking on the payment button.</p>]]></field>
+            <field name="paymaya_api_username"></field>
+            <field name="paymaya_api_password"></field>
+            <field name="paymaya_publishable_key">pk-Z0OSzLvIcOI2UIvDhdTGVVfRSSeiGStnceqwUE7n0Ah</field>
+            <field name="paymaya_secret_key">sk-X8qolYjy62kIzEbr0QRK1h4b4KDVHaNcwMYk39jInSl</field>
+
+        </record>
+
+    </data>
+</odoo>

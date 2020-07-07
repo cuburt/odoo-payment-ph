@@ -1,0 +1,9 @@
+import subprocess
+
+def main():
+    subprocess.Popen('lt -h \'http://serverless.social\'-s \'odoo-test\' -p 8069', shell=True, bufsize=1,
+                     stdin=subprocess.PIPE)
+    return True
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+
+    <record id="acquirer_form_paymaya" model="ir.ui.view">
+        <field name="name">payment.acquirer.form.inherit</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='after'>
+                <group attrs="{'invisible': [('provider', '!=', 'paymaya')]}">
+                    <field name="paymaya_api_username"/>
+                    <field name="paymaya_api_password" password="True"/>
+                    <field name="paymaya_secret_key" password="True"/>
+                    <field name="paymaya_publishable_key" password="True"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>

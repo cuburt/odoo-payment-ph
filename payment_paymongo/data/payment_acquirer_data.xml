@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="payment_acquirer_paymongo" model="payment.acquirer">
+        <field name="name">Paymongo</field>
+        <field name="sequence">3</field>
+        <field name="view_template_id" ref="payment.default_acquirer_button"/>
+        <field name="image" type="base64" file="payment_paymongo/static/src/img/paymongo_icon.png"/>
+        <field name="module_id" ref="base.module_payment_paymongo"/>
+        <field name="description" type="html">
+            <p>
+                PayMongo is the easiest way to accept payments via e-wallets or credit cards.
+            </p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><i class="fa fa-check"/>Online Payment</li>
+                <li class="list-inline-item"><i class="fa fa-check"/>Payment Status Tracking</li>
+            </ul>
+        </field>
+        <!-- https://www.paypal.com/us/selfhelp/article/Which-credit-cards-can-I-accept-with-PayPal-Merchant-Services-FAQ1525#business -->
+        <field name="payment_icon_ids" eval='[(6, 0, [ref("payment.payment_icon_cc_mastercard"),
+                                                      ref("payment.payment_icon_cc_jcb"),
+                                                      ref("payment.payment_icon_cc_visa")])]'/>
+        </record>
+
+        <record id="payment_acquirer_paymongo" model="payment.acquirer">
+            <field name="name">Paymongo</field>
+            <field name="image" type="base64" file="payment_paymongo/static/src/img/paymongo_icon.png"/>
+            <field name="provider">paymongo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="paymongo_form"/>
+            <field name="environment">test</field>
+            <field name="pre_msg"><![CDATA[
+<p>You will be redirected to the Paymongo checkout portal after clicking on the payment button.</p>]]></field>
+            <field name="paymongo_public_key">pk_test_V3GMroFFQqoidg7oyV8YoLeK</field>
+            <field name="paymongo_secret_key">sk_test_JF7gA6ewQEzcrAJW48AcXcvY</field>
+
+        </record>
+
+    </data>
+</odoo>

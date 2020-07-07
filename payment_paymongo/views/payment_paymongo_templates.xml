@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <template id="paymongo_form">
+            <div>
+                <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+                <input type="hidden" name="data.get('attributes',{}).get('type')" t-att-value="data.get('attributes',{}).get('type')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('amount')" t-att-value="data.get('attributes',{}).get('amount')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('currency')" value="data.get('attributes',{}).get('currency')" />
+                <!-- partner / address data -->
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('name')" t-att-value="data.get('attributes',{}).get('billing',{}).get('name')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('phone')" t-att-value="data.get('attributes',{}).get('billing',{}).get('phone')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('email')" t-att-value="data.get('attributes',{}).get('billing',{}).get('email')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('line1')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('line1')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('line2')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('line2')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('state')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('state')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('postal_code')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('postal_code')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('city')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('city')"/>
+                <input type="hidden" name="data.get('attributes',{}).get('billing',{}).get('address',{}).get('country')" t-att-value="data.get('attributes',{}).get('billing',{}).get('address',{}).get('country')"/>
+            </div>
+        </template>
+    </data>
+</odoo>
