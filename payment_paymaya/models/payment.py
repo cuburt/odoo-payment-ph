@@ -13,6 +13,7 @@ from odoo import api, fields, models, _
 from odoo.addons.payment.models.payment_acquirer import ValidationError
 
 paymaya_data = {}
+_pending_url = '/payment/paymaya/pending/'
 _success_url = '/payment/paymaya/success/'
 _failed_url = '/payment/paymaya/failed/'
 _cancel_url = '/payment/paymaya/cancel/'
@@ -36,6 +37,7 @@ class AcquirerPaymaya(models.Model):
             else '%s:' %(key)
         encodedBytes = base64.b64encode(auth.encode('UTF-8'))
         encodedString = str(encodedBytes, 'UTF-8')
+        print(encodedString)
         return {'Content-Type':'application/json', 'Authorization':'Basic %s'%(encodedString)}
 
     @api.model
@@ -184,9 +186,9 @@ class AcquirerPaymaya(models.Model):
             },
             "items": [ item for item in item_list],
             "redirectUrl": {
-                "success": urls.url_join(base_url, _success_url)+'%s'%((values.get('reference')).replace('/','-')),
-                "failure": urls.url_join(base_url, _failed_url)+'%s'%((values.get('reference')).replace('/','-')),
-                "cancel": urls.url_join(base_url, _cancel_url)+'%s'%((values.get('reference')).replace('/','-'))
+                "success": urls.url_join(base_url, _pending_url)+'%s'%((values.get('reference')).replace('/','-')),
+                "failure": urls.url_join(base_url, _pending_url)+'%s'%((values.get('reference')).replace('/','-')),
+                "cancel": urls.url_join(base_url, _pending_url)+'%s'%((values.get('reference')).replace('/','-'))
             },
             #"reference"
             "requestReferenceNumber": values.get('reference'),
@@ -214,10 +216,11 @@ class AcquirerPaymaya(models.Model):
                 except HTTPError:
                     _logger.error(resp.text)
                     paymaya_error = resp.json().get('error', {}).get('message', '')
+                    print(paymaya_error)
                     error_msg = " " + (_("Paymaya gave us the following info about the problem: '%s'") % paymaya_error)
                     raise ValidationError(error_msg)
         except: pass
-        return resp.json()
+        return resp
 
     @api.multi
     def _customize_paymaya(self):
@@ -233,12 +236,12 @@ class AcquirerPaymaya(models.Model):
             "skipResultPage": False,
             "redirectTimer": 3
         }
-        self._paymaya_request('/checkout/v1/customizations', data, 'POST', self.paymaya_secret_key)
+        self._paymaya_request('/checkout/v1/customizations', data, 'POST', self.paymaya_secret_key).json()
         return True
 
     def _create_paymaya_session(self, data):
         self.ensure_one()
-        resp = self._paymaya_request("checkout/v1/checkouts", data, 'POST', self.paymaya_publishable_key)
+        resp = self._paymaya_request("checkout/v1/checkouts", data, 'POST', self.paymaya_publishable_key).json()
         if resp.get("checkoutId") and data.get("requestReferenceNumber"):
             tx = (
                 self.env["payment.transaction"]
@@ -259,10 +262,20 @@ class AcquirerPaymaya(models.Model):
     @api.multi
     def paymaya_get_payment(self, data):
         tx = self.env['payment.transaction'].sudo().search([('reference','=',data['requestReferenceNumber'])])
-        checkout_details = self._paymaya_request('checkout/v1/checkouts/%s'%(str(tx.paymaya_checkout_id)),None,'GET', self.paymaya_secret_key)
+        checkout_details = self._paymaya_request('checkout/v1/checkouts/%s'%(str(tx.paymaya_checkout_id)),None,'GET', self.paymaya_secret_key).json()
         tx.paymaya_details = checkout_details
         tx.paymaya_url_reference = data['metadata']['url_reference_number']
-        return data
+        return checkout_details
+
+    @api.multi
+    def paymaya_capture_payment(self, data):
+        body = {
+            "captureAmount":{
+                "amount": data.get('items', {}).get('totalAmount',{}).get('value'),
+                "currency": "PHP"
+            }
+        }
+        return self._paymaya_request('payments/v1/payments/'+data.get('id')+'/capture', body, 'POST', self.paymaya_secret_key).json()
 
 
 class PaymayaTransaction(models.Model):
@@ -271,6 +284,7 @@ class PaymayaTransaction(models.Model):
     paymaya_checkout_id = fields.Char('Paymaya Checkout ID', readonly=True)
     paymaya_redirect_url = fields.Char('Paymaya Checkout URL', readonly=True)
     paymaya_details = fields.Char('Session Details', readonly=True)
+    paymaya_captured = fields.Char('Payment Details', readonly=True)
     paymaya_url_reference = fields.Char('URL Request Reference Number', readonly=True)
 
     @api.model
@@ -299,29 +313,44 @@ class PaymayaTransaction(models.Model):
             raise ValidationError(error_msg)
         return tx
 
-    @api.multi
-    def _paymaya_create_webhook(self):
-        base_url = self.env['payment.acquirer'].search([('provider','=','paymaya')]).get_base_url()
-        secret_key = self.env['payment.acquirer'].search([('provider','=','paymaya')]).paymaya_secret_key
-        requests = [{"name":"PAYMENT_SUCCESS","callbackUrl": urls.url_join(base_url, _success_url)},
-                    {"name":"PAYMENT_FAILED","callbackUrl": urls.url_join(base_url, _failed_url)},
-                    {"name":"PAYMENT_EXPIRED","callbackUrl": urls.url_join(base_url, _cancel_url)},
-                    {"name":"CHECKOUT_DROPOUT", "callbackUrl": urls.url_join(base_url, _success_url)},
-                    {"name":"CHECKOUT_FAILURE", "callbackUrl": urls.url_join(base_url, _failed_url)}
-                    ]
-        for request in requests:
-            response = self.env['payment.acquirer'].sudo()._paymaya_request("checkout/v1/webhooks",
-                                                                              request, 'POST', secret_key)
-            try:
-                if response['code'] and response['code'] == 'PY0039':
-                    pass
-            except: pass
-        return True
+    # @api.multi
+    # def _paymaya_create_webhook(self):
+    #     base_url = self.env['payment.acquirer'].search([('provider','=','paymaya')]).get_base_url()
+    #     secret_key = self.env['payment.acquirer'].search([('provider','=','paymaya')]).paymaya_secret_key
+    #     requests = [{"name":"PAYMENT_SUCCESS","callbackUrl": urls.url_join(base_url, _success_url)},
+    #                 {"name":"PAYMENT_FAILED","callbackUrl": urls.url_join(base_url, _failed_url)},
+    #                 {"name":"PAYMENT_EXPIRED","callbackUrl": urls.url_join(base_url, _cancel_url)},
+    #                 {"name":"CHECKOUT_DROPOUT", "callbackUrl": urls.url_join(base_url, _success_url)},
+    #                 {"name":"CHECKOUT_FAILURE", "callbackUrl": urls.url_join(base_url, _failed_url)}
+    #                 ]
+    #     for request in requests:
+    #         response = self.env['payment.acquirer'].sudo()._paymaya_request("checkout/v1/webhooks",
+    #                                                                           request, 'POST', secret_key)
+    #         try:
+    #             if response['code'] and response['code'] == 'PY0039':
+    #                 pass
+    #         except: pass
+    #     return True
 
+    @api.model
+    def polling(self, checkout_id, reference, data):
+        paymaya = self.env['payment.acquirer'].sudo().search([('provider','=','paymaya')])
+        print(paymaya.paymaya_secret_key)
+        try:
+            polling.poll(lambda :
+            paymaya._paymaya_request('checkout/v1/checkouts/%s'%(str(checkout_id)),None,'GET', paymaya.paymaya_secret_key).status_code==200,
+            step=60, poll_forever=True,
+            ignore_exceptions=(requests.exceptions.ConnectionError,))
+
+            source_details = paymaya.paymaya_get_payment(data)
+            return self._paymaya_form_validate(source_details)
+        except Exception as e:
+            print('ERROR:', str(e))
+            return True
 
     @api.multi
     def _paymaya_form_validate(self, data):
-        self._paymaya_create_webhook()
+        # self._paymaya_create_webhook()
         status = data.get('paymentStatus')
         former_tx_state = self.state
         res = {'acquirer_reference': data.get('transactionReferenceNumber')}
@@ -331,7 +360,8 @@ class PaymayaTransaction(models.Model):
             self._set_transaction_pending()
             if self.state == 'pending' and self.state != former_tx_state:
                 _logger.info('Received notification for Paymaya payment %s: set as pending' % (self.reference))
-                return self.write(res)
+                self.write(res)
+                return self.polling(self.paymaya_checkout_id, self.reference)
             return True
 
         elif status in ['CHECKOUT_FAILURE','PAYMENT_FAILED']:
@@ -339,19 +369,22 @@ class PaymayaTransaction(models.Model):
                 res.update(state_message=data.get('error', {}).get('message', ''))
             except: pass
             self._set_transaction_error()
-            if self.state in ['pending','authorized','draft'] and self.state != former_tx_state:
+            if self.state == 'error' and self.state != former_tx_state:
                 _logger.info('Received notification for Paymaya checkout %s: set as failed' % (self.reference))
                 return self.write(res)
             return True
 
         elif status in ['CHECKOUT_DROPOUT','PAYMENT_EXPIRED']:
             self._set_transaction_cancel()
-            if self.state in ['draft','authorized'] and self.state != former_tx_state:
+            if self.state == 'cancel' and self.state != former_tx_state:
                 _logger.info('Received notification for Paymaya checkout %s: set as cancelled' % (self.reference))
                 return self.write(res)
             return True
 
         elif status in ['PAYMENT_SUCCESS']:
+            print('capturing...')
+            self.paymaya_captured = self.env['payment.acquirer'].sudo().search([('provider','=','paymaya')]).paymaya_capture_payment(self.paymaya_details)
+            print('captured.')
             try:
                 # dateutil and pytz don't recognize abbreviations PDT/PST
                 tzinfos = {
@@ -364,6 +397,7 @@ class PaymayaTransaction(models.Model):
             res.update(date=date)
             self._set_transaction_done()
             if self.state == 'done' and self.state != former_tx_state:
+                print('done')
                 _logger.info('Validated Paypal payment for tx %s: set as done' % (self.reference))
                 return self.write(res)
             return True

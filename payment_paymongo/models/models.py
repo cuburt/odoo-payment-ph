@@ -281,8 +281,8 @@ class PaymongoTransaction(models.Model):
                 date = fields.Datetime.now()
             res.update(date=date)
             self._set_transaction_done()
-            if self.state == 'paid' and self.state != former_tx_state:
-                print('paint')
+            if self.state == 'done' and self.state != former_tx_state:
+                print('done')
                 _logger.info('Validated Paymongo payment for tx %s: set as done' % (self.reference))
                 return self.write(res)
             return True
